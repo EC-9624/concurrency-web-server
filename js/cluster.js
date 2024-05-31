@@ -1,6 +1,5 @@
 const cluster = require("cluster");
 const http = require("http");
-const { FileReader } = require("undici-types");
 
 // If we're the master process, fork worker processes
 if (cluster.isMaster) {
