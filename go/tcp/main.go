@@ -7,10 +7,8 @@ import (
 )
 
 func main() {
-	// Port to listen on
-	port := "8080"
 
-	// Message to send in response
+	port := "8080"
 	message := "Hello, World!"
 
 	// Parse the port number
@@ -45,9 +43,7 @@ func main() {
 func handleConnection(conn *net.TCPConn, message string) {
 	defer conn.Close()
 
-	// Simulate processing time (optional)
-	// time.Sleep(time.Second)
-
+	
 	// Build the HTTP response (manually)
 	response := fmt.Sprintf("HTTP/1.1 200 OK\r\nContent-Length: %d\r\n\r\n%s", len(message), message)
 
