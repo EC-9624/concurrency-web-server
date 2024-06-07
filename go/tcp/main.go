@@ -42,7 +42,7 @@ func handleConnection(conn *net.TCPConn, message string) {
 	defer conn.Close()
 
 	
-	// Build the HTTP response (manually)
+	// Build the HTTP response 
 	response := fmt.Sprintf("HTTP/1.1 200 OK\r\nContent-Length: %d\r\n\r\n%s", len(message), message)
 
 	// Write the response to the connection
