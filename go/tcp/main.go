@@ -27,7 +27,6 @@ func main() {
 	defer listener.Close()
 	fmt.Println("Server listening on port", port)
 
-	// Loop to accept connections
 	for {
 		conn, err := listener.AcceptTCP()
 		if err != nil {
@@ -35,7 +34,6 @@ func main() {
 			continue
 		}
 
-		// Handle connection in a separate goroutine
 		go handleConnection(conn, message)
 	}
 }
