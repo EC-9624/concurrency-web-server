@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "path": "js"
+    },
+    {
+      "path": "java_web_server"
+    },
+    {
+      "path": "go"
+    },
+    {
+      "path": "rust"
+    }
+  ],
+  "settings": {}
+}
