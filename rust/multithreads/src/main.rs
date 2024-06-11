@@ -8,7 +8,7 @@ fn main() {
     let listener = TcpListener::bind("127.0.0.1:7878").unwrap(); // bind listener
 
     let mut pool_builder = ThreadPoolBuilder::new();
-    pool_builder.pool_size(100);
+    pool_builder.pool_size(64);
     let pool = pool_builder.create().expect("couldn't create threadpool");
 
     // Listen for an incoming connection.
