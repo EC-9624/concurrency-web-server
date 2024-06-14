@@ -1,30 +1,26 @@
-use std::io::prelude::*;
-use std::net::TcpListener;
-use std::net::TcpStream;
-extern crate futures;
-use futures::executor::ThreadPoolBuilder;
+use tokio::io::AsyncWriteExt;
+use tokio::net::{TcpListener, TcpStream};
+use tokio::task;
 
-fn main() {
-    let listener = TcpListener::bind("127.0.0.1:7878").unwrap(); // bind listener
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let listener = TcpListener::bind("127.0.0.1:7878").await?;
 
-    let mut pool_builder = ThreadPoolBuilder::new();
-    pool_builder.pool_size(64);
-    let pool = pool_builder.create().expect("couldn't create threadpool");
+    loop {
+        let (stream, _) = listener.accept().await?;
 
-    // Listen for an incoming connection.
-    for stream in listener.incoming() {
-        let stream = stream.unwrap();
-
-        // spawning each connection in a new thread asynchronously
-        pool.spawn_ok(async {
-            handle_connection(stream).await;
+        task::spawn(async move {
+            if let Err(e) = handle_connection(stream).await {
+                eprintln!("Failed to handle connection: {}", e);
+            }
         });
     }
 }
 
-async fn handle_connection(mut stream: TcpStream) {
+async fn handle_connection(mut stream: TcpStream) -> Result<(), std::io::Error> {
     let response = "HTTP/1.1 200 OK\r\nContent-Length: 13\r\n\r\nHello, World!";
 
-    stream.write(response.as_bytes()).unwrap(); // write response
-    stream.flush().unwrap();
+    stream.write_all(response.as_bytes()).await?;
+    stream.flush().await?;
+    Ok(())
 }
