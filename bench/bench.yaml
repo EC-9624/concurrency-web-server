@@ -6,4 +6,4 @@ rampup: 2
 plan:
   - name: Fetch base
     request:
-      url: /
+      url: / d
