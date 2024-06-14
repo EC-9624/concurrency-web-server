@@ -4,8 +4,8 @@ use std::{
 };
 
 fn main() {
-    let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
-    println!("server listening on port 7878....");
+    let listener = TcpListener::bind("127.0.0.1:3000").unwrap();
+    println!("server listening on port 3000....");
 
     for stream in listener.incoming() {
         let stream = stream.unwrap();
