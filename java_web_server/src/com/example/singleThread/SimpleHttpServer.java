@@ -13,7 +13,6 @@ public class SimpleHttpServer {
 
         HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
 
-        // Define the handler for the root context "/"
         server.createContext("/", new HelloHandler());
 
         // Start the server
