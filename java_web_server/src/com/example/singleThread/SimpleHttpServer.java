@@ -11,7 +11,7 @@ import java.net.InetSocketAddress;
 public class SimpleHttpServer {
     public static void main(String[] args) throws IOException {
 
-        HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
+        HttpServer server = HttpServer.create(new InetSocketAddress(3000), 0);
 
         server.createContext("/", new HelloHandler());
 
@@ -19,7 +19,7 @@ public class SimpleHttpServer {
         server.setExecutor(null); // Use the default executor
         server.start();
 
-        System.out.println("Server is listening on port 8080");
+        System.out.println("Server is listening on port 3000");
     }
 
     static class HelloHandler implements HttpHandler {

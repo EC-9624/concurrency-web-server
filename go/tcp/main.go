@@ -3,29 +3,20 @@ package main
 import (
 	"fmt"
 	"net"
-	"strconv"
 )
 
 func main() {
 
-	port := "8080"
 	message := "Hello, World!"
 
-	// Parse the port number
-	portNum, err := strconv.Atoi(port)
-	if err != nil {
-		fmt.Println("Error parsing port:", err)
-		return
-	}
-
 	// Listen on TCP socket for incoming connections
-	listener, err := net.ListenTCP("tcp", &net.TCPAddr{Port: portNum})
+	listener, err := net.ListenTCP("tcp", &net.TCPAddr{Port: 3000})
 	if err != nil {
 		fmt.Println("Error listening:", err)
 		return
 	}
 	defer listener.Close()
-	fmt.Println("Server listening on port", port)
+	fmt.Println("Server listening on port", 3000)
 
 	for {
 		conn, err := listener.AcceptTCP()

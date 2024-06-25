@@ -3,7 +3,7 @@ const http = require("http");
 
 // If we're the master process, fork worker processes
 if (cluster.isMaster) {
-  const numWorkers = require("os").cpus().length - 3; // 8 cores
+  const numWorkers = require("os").cpus().length - 1; // 10 cores
 
   console.log(
     `Master process ${process.pid} is running and spawning ${numWorkers} worker processes`
@@ -23,7 +23,7 @@ if (cluster.isMaster) {
     cluster.fork();
   });
 } else {
-  const port = process.env.PORT || 8080;
+  const port = process.env.PORT || 3000;
   // Worker process - start an HTTP server
   const server = http.createServer((req, res) => {
     res.writeHead(200);
@@ -31,6 +31,6 @@ if (cluster.isMaster) {
   });
 
   server.listen(port, () => {
-    console.log(`Worker process ${process.pid} listening on port 8080`);
+    console.log(`Worker process ${process.pid} listening on port ${port}`);
   });
 }
