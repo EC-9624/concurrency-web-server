@@ -1,4 +1,5 @@
 use std::{
+
     env,
     fs::File,
     io::{Read, Write},
@@ -8,6 +9,7 @@ use std::{
 };
 
 fn main() {
+
     let current_dir = env::current_dir().expect("Failed to get current directory");
     let dist_path = current_dir.join("../../dist");
     let dist_path = dist_path
@@ -19,14 +21,17 @@ fn main() {
     let listener = TcpListener::bind("127.0.0.1:3000").expect("Could not bind to port 3000");
     println!("Server listening on port 3000...");
 
+
     // Accept connections in a loop
     for stream in listener.incoming() {
         match stream {
             Ok(stream) => {
+
                 let dist_path = dist_path.clone();
                 // Spawn a new thread for each connection
                 thread::spawn(move || {
                     if let Err(e) = handle_connection(stream, dist_path) {
+
                         eprintln!("Failed to handle connection: {}", e);
                     }
                 });
@@ -37,6 +42,7 @@ fn main() {
         }
     }
 }
+
 
 fn handle_connection(mut stream: TcpStream, base_path: PathBuf) -> std::io::Result<()> {
     let mut buffer = [0; 1024];
@@ -93,6 +99,7 @@ fn handle_connection(mut stream: TcpStream, base_path: PathBuf) -> std::io::Resu
 
 fn send_404(stream: &mut TcpStream) -> std::io::Result<()> {
     let response = "HTTP/1.1 404 NOT FOUND\r\nContent-Length: 0\r\n\r\n";
+
     stream.write_all(response.as_bytes())?;
     stream.flush()?;
     Ok(())
