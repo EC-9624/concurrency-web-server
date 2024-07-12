@@ -26,7 +26,7 @@ public class virtualThreadHttpServer {
         String currentDir = currentRelativePath.toAbsolutePath().toString();
 
         // Set the distPath to the canonical path of the dist directory
-        File distDir = new File(currentDir, "../../dist");
+        File distDir = new File(currentDir, "/dist");
         distPath = distDir.getCanonicalPath();
 
         // Print the path to the /dist directory
