@@ -14,7 +14,7 @@ fn main() {
             Ok(stream) => {
                 // Spawn a new thread for each connection
                 thread::spawn(move || {
-                    if let Err(e) = handle_connection(stream) {
+                    if let Err(e) = hello_handler(stream) {
                         eprintln!("Failed to handle connection: {}", e);
                     }
                 });
@@ -26,7 +26,7 @@ fn main() {
     }
 }
 
-fn handle_connection(mut stream: TcpStream) -> std::io::Result<()> {
+fn hello_handler(mut stream: TcpStream) -> std::io::Result<()> {
     let mut buffer = [0; 1024];
     stream.read(&mut buffer)?;
 
