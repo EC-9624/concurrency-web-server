@@ -23,7 +23,7 @@ Benchmark result for Conncurrency web server in Go, Java, NodeJs ,Rust using `wr
 | -------- | -------------- | ------------- | ------------ | ----------------- | -------------- | -------------- |
 | Go       | Net-Http       | 1900          | 68129.48     | 36.9              | 1080           | 2047231        |
 | Java     | Single Thread  | 1500          | 25482.41     | 13.8              | 414.6          | 765378         |
-| Java     | multithreads   | 3100          | 62900.53     | 34.07             | 1024           | 1893371        |
+| Java     | multithreads   | 1400          | 62900.53     | 34.07             | 1024           | 1893371        |
 | Java     | Virtual Thread | 1600          | 53881.12     | 29.19             | 860            | 1621701        |
 | NodeJs   | single thread  | 1200          | 42484.87     | 25.69             | 771.48         | 1275960        |
 | NodeJs   | Cluster        | 1800          | 44604.86     | 26.97             | 810.31         | 1340177        |
