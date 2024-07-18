@@ -1,0 +1,65 @@
+[
+  {
+    "Language": "Go",
+    "Test Type": "Net-Http",
+    "Max Concurent": 1900,
+    "Requests/sec": 68129.48,
+    "Transfer/sec (MB)": 36.9,
+    "Data Read (MB)": 1080,
+    "Total Requests": 2047231
+  },
+  {
+    "Language": "Java",
+    "Test Type": "SingleThread",
+    "Max Concurent": 1500,
+    "Requests/sec": 25482.41,
+    "Transfer/sec (MB)": 13.8,
+    "Data Read (MB)": 414.6,
+    "Total Requests": 765378
+  },
+  {
+    "Language": "Java",
+    "Test Type": "multiThreads",
+    "Max Concurent": 1400,
+    "Requests/sec": 62900.53,
+    "Transfer/sec (MB)": 34.07,
+    "Data Read (MB)": 1024,
+    "Total Requests": 1893371
+  },
+  {
+    "Language": "Java",
+    "Test Type": "VirtualThreads",
+    "Max Concurent": 1600,
+    "Requests/sec": 53881.12,
+    "Transfer/sec (MB)": 29.19,
+    "Data Read (MB)": 860,
+    "Total Requests": 1621701
+  },
+  {
+    "Language": "NodeJs",
+    "Test Type": "singleThread",
+    "Max Concurent": 1200,
+    "Requests/sec": 42484.87,
+    "Transfer/sec (MB)": 25.69,
+    "Data Read (MB)": 771.48,
+    "Total Requests": 1275960
+  },
+  {
+    "Language": "NodeJs",
+    "Test Type": "Cluster",
+    "Max Concurent": 1800,
+    "Requests/sec": 44604.86,
+    "Transfer/sec (MB)": 26.97,
+    "Data Read (MB)": 810.31,
+    "Total Requests": 1340177
+  },
+  {
+    "Language": "Rust",
+    "Test Type": "axtic-web",
+    "Max Concurent": 2800,
+    "Requests/sec": 36508.35,
+    "Transfer/sec (MB)": 25.8,
+    "Data Read (MB)": 776.75,
+    "Total Requests": 1099075
+  }
+]

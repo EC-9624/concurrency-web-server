@@ -1,0 +1,82 @@
+[
+  {
+    "Language": "GO",
+    "Test Type": "net-http",
+    "Requests/sec": 121591.8,
+    "Transfer/sec (MB)": 15.07,
+    "Data Read (MB)": 453.19,
+    "Total Requests": 3655453
+  },
+  {
+    "Language": "GO",
+    "Test Type": "tcp",
+    "Requests/sec": 5242.11,
+    "Transfer/sec (MB)": 0.26,
+    "Data Read (MB)": 7.81,
+    "Total Requests": 157407
+  },
+  {
+    "Language": "Java",
+    "Test Type": "Threads",
+    "Requests/sec": 74117.93,
+    "Transfer/sec (MB)": 6.29,
+    "Data Read (MB)": 189.08,
+    "Total Requests": 2227572
+  },
+  {
+    "Language": "Java",
+    "Test Type": "VirtualThreads",
+    "Requests/sec": 73121.78,
+    "Transfer/sec (MB)": 6.21,
+    "Data Read (MB)": 186.53,
+    "Total Requests": 2197579
+  },
+  {
+    "Language": "Java",
+    "Test Type": "SingleThread",
+    "Requests/sec": 47538.18,
+    "Transfer/sec (MB)": 4.03,
+    "Data Read (MB)": 121.16,
+    "Total Requests": 1427437
+  },
+  {
+    "Language": "NodeJs",
+    "Test Type": "Cluster",
+    "Requests/sec": 111067.4,
+    "Transfer/sec (MB)": 18.32,
+    "Data Read (MB)": 550.25,
+    "Total Requests": 3335124
+  },
+  {
+    "Language": "NodeJs",
+    "Test Type": "SingleThread",
+    "Requests/sec": 97411.22,
+    "Transfer/sec (MB)": 14.31,
+    "Data Read (MB)": 429.38,
+    "Total Requests": 2923588
+  },
+  {
+    "Language": "Rust",
+    "Test Type": "actix web",
+    "Requests/sec": 194266.05,
+    "Transfer/sec (MB)": 24.08,
+    "Data Read (MB)": 725.07,
+    "Total Requests": 5848375
+  },
+  {
+    "Language": "Rust",
+    "Test Type": "multithreaded tcp",
+    "Requests/sec": 35381.47,
+    "Transfer/sec (MB)": 1.75,
+    "Data Read (MB)": 17.63,
+    "Total Requests": 355470
+  },
+  {
+    "Language": "Rust",
+    "Test Type": "tcp-singleThread",
+    "Requests/sec": 6456.7,
+    "Transfer/sec (MB)": 0.32,
+    "Data Read (MB)": 9.63,
+    "Total Requests": 194149
+  }
+]
