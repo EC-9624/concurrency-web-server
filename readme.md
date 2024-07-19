@@ -18,8 +18,8 @@ cd ./concurrency-web-servernode && ./js/cluster.js
 ```
 ### Rust
 ```
-cd ./rust/actix-web/ &
-
+cd ./rust/actix-web/ & cargo run
+```
 ## Serving String "Hello, World!"
 
 | Language | Test Type         | Requests/sec | Transfer/sec (MB) | Data Read (MB) | Total Requests |
@@ -47,5 +47,4 @@ cd ./rust/actix-web/ &
 | NodeJs   | Cluster        | 1800          | 44604.86     | 26.97             | 810.31         | 1340177        |
 | Rust     | axtic-web      | 2800          | 36508.35     | 25.8              | 776.75         | 1099075        |
 
-& cargo run
-```
+
