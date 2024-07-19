@@ -2,6 +2,24 @@
 
 Benchmark result for Conncurrency web server in Go, Java, NodeJs ,Rust using `wrk`
 
+## cmd
+
+### Java
+```
+cd ./concurrency-web-server && java  ./java_web_server/src/com/example/threads/mulitiThreadsHttpServer.java 
+```
+### Go
+```
+cd ./concurrency-web-server && go run ./go/net-http/main.go 
+```
+### NodeJs
+```
+cd ./concurrency-web-servernode && ./js/cluster.js 
+```
+### Rust
+```
+cd ./rust/actix-web/ &
+
 ## Serving String "Hello, World!"
 
 | Language | Test Type         | Requests/sec | Transfer/sec (MB) | Data Read (MB) | Total Requests |
@@ -28,3 +46,6 @@ Benchmark result for Conncurrency web server in Go, Java, NodeJs ,Rust using `wr
 | NodeJs   | singleThread   | 1200          | 42484.87     | 25.69             | 771.48         | 1275960        |
 | NodeJs   | Cluster        | 1800          | 44604.86     | 26.97             | 810.31         | 1340177        |
 | Rust     | axtic-web      | 2800          | 36508.35     | 25.8              | 776.75         | 1099075        |
+
+& cargo run
+```
